@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+  width: 250px;
+  padding: 1rem;
+  background: #1e1e1e;
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-15px) rotateY(10deg) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.animated-bg {
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  border-radius: 12px;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.glow-button {
+  position: relative;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  color: white;
+  background: black;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 0;
+  transition: transform 0.3s;
+}
+
+.glow-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff, #ff00ff);
+  background-size: 400% 400%;
+  animation: glowing 10s linear infinite;
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.glow-button:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.tilt-card {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border-radius: 16px;
+  transition: transform 0.2s;
+  will-change: transform;
+  perspective: 1000px;
+}
+
+.tilt-card:hover {
+  transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+}
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <button class="glow-button">Click Me</button>
+    </div>
+    <br>
+    <div class="card">
+  <h2>Hover Me</h2>
+  <p>This card floats and rotates!</p>
+</div>
+<br>
+<div class="animated-bg">Welcome to My Portfolio</div>
+<br>
+<div class="tilt-card">Hover Me</div>
+
+</body>
+</html>

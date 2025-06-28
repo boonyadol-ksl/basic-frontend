@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+       .box-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  .box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      background-color: #adff2f;
+      opacity: 0.2;
+      border-radius: 14px;
+    }
+
+    .box:nth-child(2) {
+      opacity: 0.6;
+      transform: rotate(25deg) translate(10px,-15px);
+    }
+    .box:nth-child(3) {
+      opacity: 1;
+      transform: rotate(45deg) translate(20px, -35px);
+    }
+
+    
+
+    </style>
+  </head>
+  <body>
+    <main>
+        <div class="container">
+            <div class="box-container">
+                <div class="box">
+                </div>
+                   <div class="box">
+                </div>
+                  <div class="box">
+                </div>
+            </div>
+        </div>
+    </main>
+
+  </body>
+</html>

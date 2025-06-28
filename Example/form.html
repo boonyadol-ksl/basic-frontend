@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #323232;
+      }
+      .container {
+        background-color: #323232;
+        width: 100%;
+        min-height: 100vh;
+        padding: 16px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        overflow-y: auto;
+      }
+      .form-container {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 14px;
+        background: #131313;
+        border-radius: 16px;
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 1);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        width: 90%;
+        max-width: 400px;
+        box-sizing: border-box;
+        overflow-y: auto;
+      }
+      .form-field {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 10px;
+      }
+      .checkbox-group {
+        display: flex;
+        flex-direction: column;
+      }
+      .button-container {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        font-family: "Poppins", sans-serif;
+        border: none;
+        background-color: #f95c30;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #de5c3c;
+      }
+      button:active {
+        border: white 1px solid;
+      }
+      label {
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+      h1 {
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      input {
+        border-radius: 8px;
+        border: none;
+        padding: 8px;
+        background-color: #2f2f2f;
+        color: white;
+      }
+      textarea {
+        border-radius: 8px;
+        border: none;
+        padding: 8px;
+      }
+      form {
+        padding: 8px;
+      }
+      span {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <section class="form-container">
+        <h1>ฟอร์มสมัครสมาชิก</h1>
+        <form>
+          <section class="form-field">
+            <label for="fname">ชื่อ</label>
+            <input type="text" id="fname" placeholder="กรุณากรอกชื่อ" />
+          </section>
+          <section class="form-field">
+            <label for="lname">นามสกุล</label>
+            <input type="text" id="lname" placeholder="กรุณากรอกนามสกุล" />
+          </section>
+          <section class="form-field">
+            <label for="nickname">ชื่อเล่น</label>
+            <input type="text" id="nickname" placeholder="กรุณากรอกชื่อเล่น" />
+          </section>
+          <section class="form-field">
+            <label for="age">อายุ</label>
+            <input type="number" id="age" />
+          </section>
+          <section class="form-field">
+            <label for="dob">วันเกิด</label>
+            <input type="date" id="dob" />
+          </section>
+          <section class="form-field">
+            <label for="gender">เพศ</label>
+            <section class="raido-groip">
+              <input type="radio" value="male" name="gender" /><span>ชาย</span>
+              <input type="radio" value="female" name="gender" /><span
+                >หญิง</span
+              >
+              <input type="radio" value="other" name="gender" /><span
+                >อื่น ๆ</span
+              >
+            </section>
+          </section>
+          <section class="form-field">
+            <label for="interest">สิ่งที่สนใจ</label>
+            <section class="checkbox-group">
+              <section class="form-field">
+                <input type="checkbox" name="interest" id="music" />
+                <label for="music">ดนตรี</label>
+              </section>
+              <section class="form-field">
+                <input type="checkbox" />
+                <label for="movie">ท่องเที่ยว</label>
+              </section>
+              <section class="form-field">
+                <input type="checkbox" />
+                <label for="movie">อ่านหนังสือ</label>
+              </section>
+            </section>
+          </section>
+          <section class="form-field">
+            <label for="desciption">คำอธิบายเพิ่มเติม</label>
+            <textarea name="desciption" id="desciption"> </textarea>
+          </section>
+          <section class="button-container">
+            <button type="submit">สมัครสมาชิก</button>
+          </section>
+        </form>
+      </section>
+    </section>
+  </body>
+</html>

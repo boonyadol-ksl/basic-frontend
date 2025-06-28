@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid Responsive Example</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      display: grid;
+      gap: 1rem;
+      padding: min(1em, 2vw);
+      background-color: cadetblue;
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+
+    .image-container {
+      width: 80%;
+      max-width: 400px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+      border-radius: 8px;
+    }
+
+    .text-container {
+      max-width: 600px;
+      color: white;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        grid-template-columns: auto 1fr;
+        align-items: start;
+
+      }
+
+      .image-container {
+        max-width: 300px;
+      }
+
+      .text-container {
+        text-align: left;
+        width: 100%;
+        justify-self: start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>อ้วนน้อย</h1>
+  <div class="container">
+    <div class="image-container">
+      <img src="images/cat1.jpg" alt="อ้วนน้อย">
+    </div>
+    <div class="text-container">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, et, vitae laudantium alias ut fuga at autem ratione dicta, sed ex odio! Officia iure blanditiis veniam cupiditate! Voluptas, quisquam maxime.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

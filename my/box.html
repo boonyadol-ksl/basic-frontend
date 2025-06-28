@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 80px 1fr 100px;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+            height: 100vh;
+            gap: 10px;
+        }
+
+        .header {
+            grid-area: header;
+            background: #2196F3;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background: #607D8B;
+        }
+
+        .main {
+            grid-area: main;
+            background: #E91E63;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #FFC107;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <header class="header">Header</header>
+        <aside class="sidebar">Sidebar</aside>
+        <main class="main">Main Content</main>
+        <footer class="footer">Footer</footer>
+    </div>
+
+    <div class="grid-layout">
+  <div class="card">
+    <h3>หัวข้อการ์ด</h3>
+    <p>เนื้อหาการ์ด</p>
+    <button>คลิก</button>
+  </div>
+  <div class="card">
+    <h3>หัวข้อการ์ด</h3>
+    <p>เนื้อหาการ์ดที่ยาวกว่าเล็กน้อย</p>
+    <button>คลิก</button>
+  </div>
+  <!-- การ์ดอื่นๆ -->
+</div>
+
+<style>
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card button {
+  align-self: flex-end;
+  margin-top: auto;
+  padding: 8px 16px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+</style>
+
+
+</body>
+
+</html>

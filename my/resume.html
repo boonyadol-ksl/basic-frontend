@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชื่อของคุณ - เรซูเม่</title>
+    <!-- Tailwind CSS CDN for quick and easy styling and responsiveness -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for typography: Sarabun (for Thai) and Inter (for general/fallback) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for finer control and animations */
+        body {
+            font-family: 'Sarabun', 'Inter', sans-serif; /* Prioritize Sarabun for Thai, then Inter */
+            background-color: #f8fafc; /* Tailwind: bg-slate-50 */
+            color: #334155; /* Tailwind: text-slate-700 */
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+        }
+
+        .section-container {
+            /* Basic styling for all sections */
+            border-radius: 0.75rem; /* Tailwind: rounded-xl */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* Tailwind: shadow-xl */
+            background-color: white;
+            padding: 2.5rem 2rem; /* Tailwind: p-10 py-8 */
+            margin-bottom: 2rem; /* Tailwind: mb-8 */
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 2.5rem; /* mb-10 */
+            text-align: center;
+            font-weight: 700; /* font-bold */
+            font-size: 2.25rem; /* text-4xl */
+            color: #1e293b; /* text-slate-900 */
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.75rem; /* bottom-3 */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5rem; /* w-20 */
+            height: 0.25rem; /* h-1 */
+            background-color: #0ea5e9; /* Tailwind: bg-sky-500 */
+            border-radius: 9999px; /* Tailwind: rounded-full */
+        }
+
+        /* Hero section specific styles */
+        .hero-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* Tailwind: from-slate-900 to-slate-800 */
+            color: white;
+        }
+
+        /* Hero text animations on load */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        .animate-fade-in-up.delay-200 { animation-delay: 0.2s; }
+        .animate-fade-in-up.delay-400 { animation-delay: 0.4s; }
+
+
+        /* Hover effect for experience/project cards */
+        .card-hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        /* Skill bar animation (pure CSS - starts filled on load) */
+        .skill-bar-inner {
+            background-color: #0ea5e9; /* bg-sky-500 */
+            height: 100%;
+            border-radius: 9999px; /* rounded-full */
+        }
+
+        /* Define specific width classes for skill bars */
+        .w-95percent { width: 95%; }
+        .w-85percent { width: 85%; }
+        .w-80percent { width: 80%; }
+        .w-75percent { width: 75%; } /* New skill level */
+        .w-70percent { width: 70%; } /* New skill level */
+        .w-60percent { width: 60%; } /* New skill level */
+        .w-50percent { width: 50%; } /* New skill level */
+        .w-90percent { width: 90%; }
+        .w-88percent { width: 88%; }
+        .w-92percent { width: 92%; }
+
+        /* Responsive adjustments for mobile */
+        @media (max-width: 767px) {
+            .section-title {
+                font-size: 1.75rem; /* text-3xl */
+                margin-bottom: 2rem;
+            }
+            .section-container {
+                padding: 1.5rem 1rem;
+            }
+            .hero-section h1 {
+                font-size: 2.5rem; /* text-4xl */
+            }
+            .hero-section p {
+                font-size: 1rem; /* text-base */
+            }
+            .skills-grid {
+                grid-template-columns: 1fr !important; /* Stack skills categories */
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-sky-200 selection:text-sky-800">
+    <!-- Header / Hero Section -->
+    <header class="hero-section py-20 md:py-32 rounded-b-3xl">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <!-- Professional Photo (Placeholder for a formal headshot) -->
+            <img src="https://placehold.co/150x150/e0f2fe/0ea5e9?text=รูปโปรไฟล์" alt="รูปโปรไฟล์ของคุณ" class="rounded-full mx-auto mb-6 shadow-lg border-4 border-sky-500 animate-fade-in-down">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 animate-fade-in-down">
+                [ชื่อ-นามสกุลของคุณ]
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-6 opacity-90 animate-fade-in-up">
+                [ผู้ดูแลระบบ IT Support | ผู้ช่วยนักพัฒนาซอฟต์แวร์]
+            </p>
+            <p class="text-md md:text-lg max-w-2xl mx-auto opacity-80 animate-fade-in-up delay-200">
+                ผู้เชี่ยวชาญด้าน IT Support ที่มีประสบการณ์ในการแก้ไขปัญหาด้านเทคนิค, ดูแลระบบ และมีความสนใจในการพัฒนาซอฟต์แวร์สำหรับ Web และ Windows Application ในระดับพื้นฐาน
+            </p>
+            <div class="mt-8 flex justify-center space-x-4 animate-fade-in-up delay-400">
+                <a href="#contact" class="bg-sky-500 hover:bg-sky-600 text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                    ติดต่อฉัน
+                </a>
+                <a href="https://yourportfolio.com" target="_blank" class="bg-white hover:bg-slate-100 text-sky-700 font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                    ดูผลงาน
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-4xl mx-auto px-4 py-8 md:py-12">
+
+        <!-- About Me Section -->
+        <section id="about" class="section-container">
+            <h2 class="section-title">เกี่ยวกับฉัน</h2>
+            <p class="text-lg leading-relaxed text-center max-w-2xl mx-auto">
+                ผมเป็นผู้ดูแลระบบ IT Support ที่มีประสบการณ์ [จำนวน] ปีในการให้ความช่วยเหลือทางเทคนิค, การบำรุงรักษาระบบคอมพิวเตอร์และเครือข่าย, รวมถึงการติดตั้งและแก้ไขปัญหาซอฟต์แวร์ นอกจากนี้ ผมยังมีความสนใจและทักษะพื้นฐานในการพัฒนาซอฟต์แวร์ประเภท Web Application และ Windows Application เพื่อเพิ่มประสิทธิภาพในการทำงาน และพร้อมเรียนรู้สิ่งใหม่ๆ เพื่อเติบโตในสายงาน IT ครับ
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-container">
+            <h2 class="section-title">ทักษะ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg skills-grid">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-slate-800">ทักษะด้าน IT Support</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>การแก้ไขปัญหา Hardware/Software</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="skill-bar-inner h-2.5 rounded-full w-90percent"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>การจัดการเครือข่ายพื้นฐาน</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="skill-bar-inner h-2.5 rounded-full w-80percent"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>ระบบปฏิบัติการ (Windows, Linux Basic)</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="skill-bar-inner h-2.5 rounded-full w-85percent"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>การติดตั้งและบำรุงรักษาซอฟต์แวร์</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="skill-bar-inner h-2.5 rounded-full w-95percent"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-slate-800">ทักษะการพัฒนาซอฟต์แวร์ (พื้นฐาน)</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>HTML, CSS (Web App Basic)</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="skill-bar-inner h-2.5 rounded-full w-70percent"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>JavaScript (Basic)</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="skill-bar-inner h-2.5 rounded-full w-60percent"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Python/C# (Windows App Basic)</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="skill-bar-inner h-2.5 rounded-full w-50percent"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Database (SQL Basic)</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="skill-bar-inner h-2.5 rounded-full w-75percent"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section-container">
+            <h2 class="section-title">ประสบการณ์ทำงาน</h2>
+            <div class="space-y-8">
+                <div class="p-6 bg-slate-50 rounded-lg card-hover-effect border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-semibold text-slate-900">IT Support Specialist</h3>
+                    <p class="text-slate-600 mb-2">บริษัท เทคโนโลยีรุ่งเรือง จำกัด | กรุงเทพฯ, ประเทศไทย | ม.ค. 2564 - ปัจจุบัน</p>
+                    <ul class="list-disc list-inside text-lg space-y-2 text-slate-700">
+                        <li>ให้การสนับสนุนทางเทคนิคแก่ผู้ใช้งานทั้ง Hardware และ Software ภายในองค์กรมากกว่า 100 คน</li>
+                        <li>แก้ไขปัญหาเครือข่ายเบื้องต้น, การเชื่อมต่อ Wi-Fi และ VPN เพื่อให้การทำงานราบรื่น</li>
+                        <li>ติดตั้ง, กำหนดค่า และบำรุงรักษาเครื่องคอมพิวเตอร์และอุปกรณ์ต่อพ่วงต่างๆ</li>
+                        <li>พัฒนาระบบ Internal Web Application ขนาดเล็กด้วย HTML/CSS/JS เพื่อช่วยในการจัดการคำร้องขอ IT</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-lg card-hover-effect border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-semibold text-slate-900">Junior IT Support</h3>
+                    <p class="text-slate-600 mb-2">บริษัท โซลูชั่นไอที จำกัด | เชียงใหม่, ประเทศไทย | ก.พ. 2562 - ธ.ค. 2563</p>
+                    <ul class="list-disc list-inside text-lg space-y-2 text-slate-700">
+                        <li>รับแจ้งปัญหาและให้คำปรึกษาด้านเทคนิคแก่พนักงานทางโทรศัพท์และอีเมล</li>
+                        <li>ดูแลและบำรุงรักษาระบบคอมพิวเตอร์และซอฟต์แวร์พื้นฐาน</li>
+                        <li>ช่วยเหลือในการจัดทำเอกสารคู่มือการใช้งานสำหรับซอฟต์แวร์ภายใน</li>
+                        <li>เรียนรู้การสร้าง Windows Application พื้นฐานเพื่อจัดการ Asset Inventory ของอุปกรณ์ IT</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section-container">
+            <h2 class="section-title">การศึกษา</h2>
+            <div class="space-y-6">
+                <div class="p-6 bg-slate-50 rounded-lg card-hover-effect border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-semibold text-slate-900">ปริญญาตรีเทคโนโลยีสารสนเทศ</h3>
+                    <p class="text-slate-600 mb-2">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี | กรุงเทพฯ, ประเทศไทย | พ.ศ. 2558 - พ.ศ. 2561</p>
+                    <p class="text-lg text-slate-700">เกรดเฉลี่ย: 3.20</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-lg card-hover-effect border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-semibold text-slate-900">ประกาศนียบัตรหลักสูตร Network & System Administration</h3>
+                    <p class="text-slate-600 mb-2">สถาบัน IT Training Center | กรุงเทพฯ, ประเทศไทย | พ.ศ. 2561</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-container">
+            <h2 class="section-title">ผลงาน (พื้นฐาน)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 bg-slate-50 rounded-lg card-hover-effect border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Web App: ระบบแจ้งปัญหา IT เบื้องต้น</h3>
+                    <p class="text-slate-700 mb-4">
+                        พัฒนาด้วย HTML, CSS และ JavaScript (Vanilla JS) เพื่อให้ผู้ใช้สามารถแจ้งปัญหา IT ได้อย่างง่ายดายและติดตามสถานะได้
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://yourproject1demo.com" target="_blank" class="text-sky-600 hover:text-sky-800 font-medium transition duration-300">
+                            <span class="inline-block align-middle mr-1">&#x1F517;</span> ดูตัวอย่าง
+                        </a>
+                        <a href="https://github.com/yourusername/it-ticket-web-app" target="_blank" class="text-sky-600 hover:text-sky-800 font-medium transition duration-300">
+                            <span class="inline-block align-middle mr-1">&#x1F4BB;</span> GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-lg card-hover-effect border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Windows App: โปรแกรมจัดการ Asset IT ขนาดเล็ก</h3>
+                    <p class="text-slate-700 mb-4">
+                        สร้างด้วย Python (หรือ C#) สำหรับการบันทึกข้อมูลอุปกรณ์คอมพิวเตอร์, วันที่ซื้อ, การรับประกัน และสถานะการใช้งานภายในองค์กร
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://yourproject2demo.com" target="_blank" class="text-sky-600 hover:text-sky-800 font-medium transition duration-300">
+                            <span class="inline-block align-middle mr-1">&#x1F517;</span> ดูตัวอย่าง
+                        </a>
+                        <!-- If no GitHub, remove this link -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-container">
+            <h2 class="section-title">ติดต่อฉัน</h2>
+            <div class="text-center text-lg space-y-4">
+                <p>หากคุณสนใจในทักษะและประสบการณ์ของฉัน โปรดอย่าลังเลที่จะติดต่อ</p>
+                <p>
+                    <strong class="font-medium">อีเมล:</strong>
+                    <a href="mailto:your.email@example.com" class="text-sky-600 hover:text-sky-800 transition duration-300">
+                        your.email@example.com
+                    </a>
+                </p>
+                <p>
+                    <strong class="font-medium">โทรศัพท์:</strong>
+                    <span class="text-slate-700">[เบอร์โทรศัพท์ของคุณ]</span>
+                </p>
+                <div class="flex justify-center space-x-6 mt-6 text-3xl">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-sky-600 hover:text-sky-800 transition duration-300">
+                        &#x1F464; <!-- Unicode for Bust in Silhouette (person icon) -->
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" class="text-sky-600 hover:text-sky-800 transition duration-300">
+                        &#x1F4BB; <!-- Unicode for Personal Computer (laptop icon) -->
+                    </a>
+                    <!-- Add more social links as needed with appropriate Unicode emojis -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8 rounded-t-3xl mt-12">
+        <div class="max-w-4xl mx-auto px-4 text-center text-sm opacity-80">
+            <p>&copy; <span id="current-year"></span> [ชื่อของคุณ]. สงวนลิขสิทธิ์</p>
+            <p class="mt-2">สร้างด้วยความตั้งใจและพลังงาน</p>
+        </div>
+    </footer>
+
+    <script>
+        // Pure JavaScript for current year, as it's a simple dynamic element.
+        // If not allowed, this can be replaced with a static year.
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
