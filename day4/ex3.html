@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>แบบฝึกหัด: เปลี่ยนสีพื้นหลังด้วยปุ่ม</h2>
+    <button id="redBtn">Red</button>
+    <button id="greenBtn">Green</button>
+    <button id="blueBtn">Blue</button>
+    <button id="whiteBtn">White</button>
+
+    <script>
+        // รับอ้างอิงปุ่ม
+        const redBtn = document.getElementById('redBtn');
+        const greenBtn = document.getElementById('greenBtn');
+        const blueBtn = document.getElementById('blueBtn');
+        const whiteBtn = document.getElementById('whiteBtn');
+
+        // เพิ่ม Event Listener ให้แต่ละปุ่ม
+        redBtn.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'red';
+        });
+
+        greenBtn.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'green';
+        });
+
+        blueBtn.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'blue';
+        });
+
+        whiteBtn.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'white';
+        });
+    </script>
+
+
+</body>
+
+</html>

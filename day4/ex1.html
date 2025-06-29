@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Cards</title>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script>
+    const container = document.getElementById("container");
+
+    // สร้าง div.card 3 อัน
+    for (let i = 1; i <= 3; i++) {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.textContent = `Card${i}`;
+      card.style.backgroundColor = "red";
+      card.style.color = "back";
+      card.style.padding = "20px";
+      card.style.margin = "10px 0";
+      card.style.borderRadius = "5px";
+      container.appendChild(card);
+    }
+
+    // ✅ เลือกทุก div.card แล้ว console.log เป็น NodeList
+    const cards = document.querySelectorAll('.card');
+    console.log(cards); // จะได้ NodeList(3) [div.card, div.card, div.card]
+  </script>
+</body>
+</html>
