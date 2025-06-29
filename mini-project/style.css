@@ -3,7 +3,9 @@ body {
   background-color: #f5f5f5;
   display: flex;
   justify-content: center;
-  padding: 50px;
+  /*for delay backgroup*/
+  transition: background-color 1s ; 
+   padding: 50px;
 }
 
 .todo-container {
@@ -84,4 +86,33 @@ li.completed span {
   margin-top: 20px;
   font-size: 14px;
   color: #444;
+}
+
+input[type="text"] {
+  border: none;                  /* เอาเส้นรอบออก */
+  border-bottom: 2px solid black; /* เพิ่มเส้นใต้สีดำ */
+  outline: none;                 /* ไม่ให้มีเส้นตอนคลิก */
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  background: transparent;       /* ไม่ใส่สีพื้นหลัง */
+}
+
+input[type="text"]:focus {
+  border-bottom-color: #3498db;  /* เปลี่ยนสีเส้นใต้เมื่อคลิก */
+}
+
+li.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);  /* เส้นขอบบาง สีดำจาง */
+  border-radius: 6px;
+  background-color: #fff; /* สีพื้นหลังขาว */
+}
+
+li.todo-item.completed {
+  background-color: #f1f1f1; /* สีพื้นหลังเหลือง */
 }

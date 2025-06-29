@@ -1,0 +1,152 @@
+:root {
+    --bg-color: #f2f2f2;
+    --text-color: #4f4f4f;
+    --primery-color: #4f4f4f;
+    --border-color: rgb(159,159,159);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+h1 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    color: var(--primery-color);
+
+}
+
+.todo-container {
+    width: 600px;
+    height: auto;
+    padding: 10px;
+   
+}
+
+form { 
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    gap: 6px;
+    padding: 1rem 0;
+}
+
+#todo-input {
+    min-width: 200px;
+    width: 400px;
+    padding: 10px;
+    /* border-radius: 10px; */
+    border-bottom: 1px solid var(--border-color);   
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: var(--bg-color);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    font-size: 16px;
+    color: var(--primery-color);
+    font-family: 'Inter', sans-serif;
+}
+#add-todo {
+    width: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--primery-color);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+}
+#add-item {
+    align-items: center;
+
+}
+
+#todo-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 10px 0;
+    gap: 8px;
+    
+}
+
+.todo-item {
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    /* justify-content: space-between; */
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.todo-text {
+    width: 100%;
+    font-size: 16px;
+    color: var(--primery-color);
+    font-family: 'Inter', sans-serif;
+}
+.delete-item {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: var(--primery-color);
+    font-family: 'Inter', sans-serif;
+}
+.remove-todo{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--primery-color);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#remaining-count{
+    font-weight: 600;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+input[type="checkbox"]:checked + label.todo-text {
+  text-decoration: line-through;
+  color: #888;
+}
