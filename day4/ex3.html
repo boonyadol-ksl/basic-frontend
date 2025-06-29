@@ -21,23 +21,13 @@
         const greenBtn = document.getElementById('greenBtn');
         const blueBtn = document.getElementById('blueBtn');
         const whiteBtn = document.getElementById('whiteBtn');
-
+        const changeBodyBackground = (color) => document.body.style.backgroundColor = color;
         // เพิ่ม Event Listener ให้แต่ละปุ่ม
-        redBtn.addEventListener('click', () => {
-            document.body.style.backgroundColor = 'red';
-        });
+        redBtn.addEventListener('click', () => changeBodyBackground('red'));
+        greenBtn.addEventListener('click', () => changeBodyBackground('green'));
+        blueBtn.addEventListener('click', () => changeBodyBackground('blue'));
+        whiteBtn.addEventListener('click', () => changeBodyBackground('white'));
 
-        greenBtn.addEventListener('click', () => {
-            document.body.style.backgroundColor = 'green';
-        });
-
-        blueBtn.addEventListener('click', () => {
-            document.body.style.backgroundColor = 'blue';
-        });
-
-        whiteBtn.addEventListener('click', () => {
-            document.body.style.backgroundColor = 'white';
-        });
     </script>
 
 
